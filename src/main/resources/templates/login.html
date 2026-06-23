@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ByteQuest v5 — Login</title>
+    <link rel="stylesheet" th:href="@{/style.css}" href="/style.css">
+</head>
+<body>
+
+<!-- Reset-Button oben in der Ecke -->
+<a class="reset" th:href="@{/reset}" href="/reset">Reset</a>
+
+<div class="card">
+    <div class="logo">B</div>
+    <h1>Welcome Back</h1>
+    <p class="sub">Sign in to continue to ByteQuest</p>
+
+    <form method="post">
+        <label for="token">Login-Token (Base64, serialisiert)</label>
+        <textarea id="token" name="token" rows="4"
+                  placeholder="Serialisierten Token hier einfuegen…"></textarea>
+
+        <div class="buttons">
+            <button type="submit" formaction="/login/secure">Secured Login</button>
+            <button type="submit" formaction="/login/unsecure">Unsecured Login</button>
+        </div>
+    </form>
+
+    <hr>
+
+    <p class="sub">Beispiel-Tokens (zum Kopieren in das Feld):</p>
+    <dl class="examples">
+        <dt>Normaler User (role=user)</dt>
+        <dd th:text="${tokenUser}">...</dd>
+        <dt>Privilege Escalation (role=admin)</dt>
+        <dd th:text="${tokenAdmin}">...</dd>
+        <dt>RCE-Gadget (kein Token, fuehrt Code aus)</dt>
+        <dd th:text="${tokenRce}">...</dd>
+    </dl>
+</div>
+
+</body>
+</html>

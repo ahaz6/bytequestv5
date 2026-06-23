@@ -1,0 +1,6 @@
+com/bytequest/ExploitGadget.class
+com/bytequest/LoginToken.class
+com/bytequest/ByteQuestApplication.class
+com/bytequest/LoginController.class
+com/bytequest/LoginController$InvalidClassException.class
+com/bytequest/LoginController$WhitelistInputStream.class

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ByteQuest v5 — Ergebnis</title>
+    <link rel="stylesheet" th:href="@{/style.css}" href="/style.css">
+</head>
+<body>
+
+<!-- Reset-Button oben in der Ecke -->
+<a class="reset" th:href="@{/reset}" href="/reset">Reset</a>
+
+<div class="card">
+    <p class="mode" th:text="${mode}">KONTROLLE</p>
+    <h1 th:text="${heading}">Ergebnis</h1>
+    <ul class="lines">
+        <li th:each="line : ${lines}" th:text="${line}">...</li>
+    </ul>
+    <p><a th:href="@{/}" href="/">Zurueck zum Login</a></p>
+</div>
+
+</body>
+</html>
